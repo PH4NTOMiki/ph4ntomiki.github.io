@@ -46,11 +46,14 @@
     new WOW().init();
 	
 	$('#form1').submit(function(evnt){
-		var email=$('[name=email]').val(),message=$('[name=message]').val(),reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),rtrn=true;
-		if(email===''){alert('Your E-mail address is empty.');rtrn=false;} else if(!reg.test(email))
-		{alert('Your E-mail address is invalid.');rtrn=false;}
-		if(message===''){alert('Your message is empty.');rtrn=false;} else if(message.length<10)
-		{alert('Your message is too short.');rtrn=false;}
+		var email=$('[name=email]').val($.trim($('[name=email]').val())).val(),
+		message=$('[name=message]').val($.trim($('[name=message]').val())).val(),
+		reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),rtrn=true;
+		if(email.replace(/ /g,'')==''){alert('Your E-mail address is empty.');rtrn=false;
+		} else if(!reg.test(email)){alert('Your E-mail address is invalid.');rtrn=false;}
+		if(message.replace(/ /g,'')==''){alert('Your message is empty.');rtrn=false;
+		} else if(!(new RegExp('[^\s@]+').test(message))){alert('Your message is invalid.');rtrn=false
+		} else if(message.length<10){alert('Your message is too short.');rtrn=false;}
 		return rtrn;
 	})
 
