@@ -44,5 +44,14 @@
 
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
+	
+	$('#form1').submit(function(evnt){
+		var email=$('[name=email]').val(),message=$('[name=message]').val(),reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),rtrn=true;
+		if(email===''){alert('Your E-mail address is empty.');rtrn=false;} else if(!reg.test(email))
+		{alert('Your E-mail address is invalid.');rtrn=false;}
+		if(message===''){alert('Your message is empty.');rtrn=false;} else if(message.length<10)
+		{alert('Your message is too short.');rtrn=false;}
+		return rtrn;
+	})
 
 })(jQuery); // End of use strict
