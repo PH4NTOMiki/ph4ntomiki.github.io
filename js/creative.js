@@ -50,14 +50,21 @@
 	setTimeout(function(){if($('video').get(0).paused){$('video').get(0).play();}},5000);
 	
 	$('#form1').submit(function(evnt){
-		var email=$('[name=email]').val($.trim($('[name=email]').val())).val(),
+		var name=$('[name=name]').val($.trim($('[name=name]').val())).val(),
+		email=$('[name=email]').val($.trim($('[name=email]').val())).val(),
 		message=$('[name=message]').val($.trim($('[name=message]').val())).val(),
-		reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),rtrn=true;
-		if(email.replace(/ /g,'') == ''){alert('Your E-mail address is empty.');rtrn=false;
-		} else if(!reg.test(email)){alert('Your E-mail address is invalid.');rtrn=false;}
-		if(message.replace(/ /g,'') == ''){alert('Your message is empty.');rtrn=false;
-		} else if(!(new RegExp('[^\s@]+').test(message))){alert('Your message is invalid.');rtrn=false;
-		} else if(message.length<10){alert('Your message is too short.');rtrn=false;}
+		reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),textReg=new RegExp('[^\s@]+'),rtrn=true;
+		
+		if(name.replace(/ /g,'') == ''){alert('Name field is empty.');rtrn=false;
+		} else if(!textReg.test(name)){alert('Your Name doesn\'t seem right.');rtrn=false;
+		} else if(name.length<3){alert('Your Name seems too short.');rtrn=false;}
+		
+		if(email.replace(/ /g,'') == ''){alert('E-mail address field is empty.');rtrn=false;
+		} else if(!reg.test(email)){alert('E-mail address format is invalid.');rtrn=false;}
+		
+		if(message.replace(/ /g,'') == ''){alert('Message field is empty.');rtrn=false;
+		} else if(!textReg.test(message)){alert('Your Message doesn\'t seem right.');rtrn=false;
+		} else if(message.length<10){alert('Your Message is too short.');rtrn=false;}
 		return rtrn;
 	});
 
