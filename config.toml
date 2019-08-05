@@ -4,6 +4,7 @@ title = "Toni Lekic Visuals"
 theme = "hugo-creative-theme"
 googleAnalytics = ""
 publishDir = "docs"
+enableRobotsTXT = true
 
 [params]
 
