@@ -25,7 +25,7 @@ enableRobotsTXT = true
 	name = "Toni Lekic Visuals"
 	description = "Toni Lekic Visuals - Photo & Video"
 	ogurl = "/"
-	ogimage = "/img/socialmediaimage.jpg"
+	ogimage = "img/socialmediaimage.jpg"
 	#ogimagealt = ""
 
 	# The path must be relative to the static folder
