@@ -1,8 +1,15 @@
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+<meta property="og:title" content="{{ .Site.Params.name }}">
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta property="og:image" content="{{ .Site.Params.ogimage }}">
+<meta property="og:url" content="{{ .Site.Params.ogurl }}">
+<meta property="og:site_name" content="{{ .Site.Params.name }}">
+<meta name="twitter:card" content="summary_large_image">
+{{ if .Site.Params.ogimagealt }}<meta name="twitter:image:alt" content="{{ .Site.Params.ogimagealt }}">{{ end }}
 {{ .Hugo.Generator }}
 <title>{{ .Site.Title }}</title>
 
