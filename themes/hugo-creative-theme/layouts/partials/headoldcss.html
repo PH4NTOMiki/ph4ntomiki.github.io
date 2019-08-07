@@ -16,15 +16,18 @@
 
 {{ "<!-- Favicon -->" | safeHTML }}
 <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}">
-{{ $bootstrap := resources.Get "/css/bootstrap.min.css" }}
-{{ $googlefonts := resources.Get "/css/css/google-fonts.min.css" }}
-{{ $fontawesome := resources.Get "/css/font-awesome.min.css" }}
-{{ $animate := resources.Get "/css/animate.min.css" }}
-{{ $modals := resources.Get "/css/modals.css" }}
-{{ $vendorcss := slice $bootstrap $googlefonts $fontawesome $animate $modals | resources.Concat "/css/vendor.css" | minify }}
-{{ $creativecss := resources.Get "/css/creative.css" | minify }}
-<link rel="stylesheet" href="{{ $vendorcss.Permalink | absURL }}" type="text/css">
-<link rel="stylesheet" href="{{ $creativecss.Permalink | absURL }}" type="text/css">
+{{ "<!-- Bootstrap Core CSS -->" | safeHTML }}
+<link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}" type="text/css">
+{{ "<!-- Custom Fonts -->" | safeHTML }}
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!--<link rel="stylesheet" href="{{ "css/google-fonts.min.css" | absURL }}" type="text/css">-->
+<link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" type="text/css">
+{{ "<!-- Plugin CSS -->" | safeHTML }}
+<link rel="stylesheet" href="{{ "css/animate.min.css" | absURL }}" type="text/css">
+{{ "<!-- Custom CSS -->" | safeHTML }}
+<link rel="stylesheet" href="{{ "css/creative.css" | absURL }}" type="text/css">
+<link rel="stylesheet" href="{{ "css/modals.css" | absURL }}" type="text/css">
 
 {{ "<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->" | safeHTML }}
 {{ "<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->" | safeHTML }}
