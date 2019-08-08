@@ -14,10 +14,10 @@
                 {{ end }}
 				{{ if .Site.Params.contact.email }}
 				<form method="POST" action="https://formspree.io/{{ .Site.Params.contact.email }}" id="form1">
-				  <input type="text" name="name" placeholder="Your Name*" required class="inputfields"><br>
-				  <input type="email" name="email" placeholder="Your Email*" required class="inputfields"><br>
-				  <textarea name="message" placeholder="Type Your Message*" required class="inputfields"></textarea><br><br>
-				  <button type="submit" id="mybtn">SEND</button>
+				  <input type="text" aria-label="Your Name" title="Your Name" name="name" placeholder="Your Name*" required class="inputfields"><br>
+				  <input type="email" aria-label="Your E-mail" title="Your E-mail" name="email" placeholder="Your E-mail*" required class="inputfields"><br>
+				  <textarea name="message" aria-label="Type Your Message" title="Type Your Message" placeholder="Type Your Message*" required class="inputfields"></textarea><br><br>
+				  <button type="submit" aria-label="Send" title="Send" id="mybtn">SEND</button>
 				</form>
 				{{ end }}
             </div>
