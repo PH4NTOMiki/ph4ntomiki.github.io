@@ -46,7 +46,7 @@ enableRobotsTXT = true
 	# Hero section
 	[params.hero]
 		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
-		slogan     = '<span style="color:green;">CREATING <span style="color:red;">UN</span>IMAGINABLE</span>'
+		slogan     = '<span class="greentext">CREATING <span class="redtext">UN</span>IMAGINABLE</span>'
 		subtitle   = '<img src="img/middle.png" alt="logo">'
 		#buttonText = "Scroll to find out more"
 
