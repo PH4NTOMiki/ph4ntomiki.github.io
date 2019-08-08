@@ -41,9 +41,9 @@
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
 	
-	$('video').on('pause',function(evnt){evnt.target.play();});
-	
-	setTimeout(function(){if($('video').get(0).paused){$('video').get(0).play();}},5000);
+	//$('video').on('pause',function(evnt){evnt.target.play();});
+	//setTimeout(function(){if($('video').get(0).paused){$('video').get(0).play();}},5000);
+	$('video').get(0).play();
 	
 	$('#form1').submit(function(evnt){
 		var name=$('[name=name]').val($.trim($('[name=name]').val())).val(),
