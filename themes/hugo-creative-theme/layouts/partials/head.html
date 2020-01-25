@@ -5,8 +5,8 @@
 {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 <meta property="og:title" content="{{ .Site.Params.name }}">
 <meta property="og:description" content="{{ .Site.Params.description }}">
-<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.ogimage }}">
-<meta property="og:url" content="{{ .Site.BaseURL }}">
+<meta property="og:image" content="{{ .Site.Params.ogimage }}">
+<meta property="og:url" content="{{ .Site.Params.ogurl }}">
 <meta property="og:site_name" content="{{ .Site.Params.name }}">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">

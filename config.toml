@@ -24,7 +24,7 @@ enableRobotsTXT = true
 	# information about you and your website.
 	name = "Toni Lekic Visuals"
 	description = "Toni Lekic Visuals - Photo & Video"
-	#ogurl = "/"
+	ogurl = "/"
 	ogimage = "img/socialmediaimage.jpg"
 	#ogimagealt = ""
 
