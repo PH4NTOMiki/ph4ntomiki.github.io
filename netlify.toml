@@ -1,5 +1,6 @@
 [build]
 publish = "public"
+Functions = "lambda"
 #command = "hugo -d public"
 
 [context.production.environment]
