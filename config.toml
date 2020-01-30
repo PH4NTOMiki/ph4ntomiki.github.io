@@ -1,4 +1,5 @@
-baseurl = "https://www.tonilekicvisuals.com/"
+#baseurl = "https://www.tonilekicvisuals.com/"
+baseurl = ""
 languageCode = "en-us"
 title = "Toni Lekic Visuals"
 theme = "hugo-creative-theme"
@@ -47,7 +48,7 @@ enableRobotsTXT = true
 	[params.hero]
 		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
 		slogan     = '<span class="greentext">CREATING <span class="redtext">UN</span>IMAGINABLE</span>'
-		subtitle   = '<img src="img/middle.png" alt="logo">'
+		#subtitle   = '<img src="img/middle.png" alt="logo">'
 		#buttonText = "Scroll to find out more"
 
 

@@ -41,14 +41,18 @@
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
 	
-	$('video').on('pause',function(evnt){evnt.target.play();});
+	/*$('video').on('pause',function(evnt){evnt.target.play();});*/
 	
-	setTimeout(function(){if($('video').get(0).paused){$('video').get(0).play();}},5000);
-	
+	setTimeout(function(){if($('video')[0].paused){$('video')[0].play();}},5000);
+	if($('#namefield')[0].setCustomValidity){
+		$('#namefield')[0].setCustomValidity('Please type your name in this field.');
+		$('#emailfield')[0].setCustomValidity('Please type your E-mail address in this field.');
+		$('#messagefield')[0].setCustomValidity('Please type your message in this field.');
+	}
 	$('#form1').submit(function(evnt){
-		var name=$('[name=name]').val($.trim($('[name=name]').val())).val(),
-		email=$('[name=email]').val($.trim($('[name=email]').val())).val(),
-		message=$('[name=message]').val($.trim($('[name=message]').val())).val(),
+		var name=$('#namefield').val($.trim($('#namefield').val())).val(),
+		email=$('#emailfield').val($.trim($('#emailfield').val())).val(),
+		message=$('#messagefield').val($.trim($('#messagefield').val())).val(),
 		reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),textReg=new RegExp('[^\s@]+'),rtrn=true;
 		
 		if(name.replace(/ /g,'') == ''){alert('Name field is empty.');rtrn=false;

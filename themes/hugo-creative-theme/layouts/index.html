@@ -43,5 +43,6 @@
         {{ partial "js.html" . }}
 
         {{ template "_internal/google_analytics.html" . }}
-    </body>
+    {{ with resources.Get "/js/creative.js" | minify }} <script> {{ .Content | safeJS }} </script> {{ end }}
+	</body>
 </html>

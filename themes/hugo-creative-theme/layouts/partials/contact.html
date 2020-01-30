@@ -14,13 +14,13 @@
                 {{ end }}
 				{{ if .Site.Params.contact.email }}
 				<form method="POST" action="https://formspree.io/{{ .Site.Params.contact.email }}" id="form1">
-				  <input type="text" aria-label="Your Name" title="Your Name" name="name" placeholder="Your Name*" required class="inputfields"><br>
-				  <input type="email" aria-label="Your E-mail" title="Your E-mail" name="email" placeholder="Your E-mail*" required class="inputfields"><br>
-				  <textarea name="message" aria-label="Type Your Message" title="Type Your Message" placeholder="Type Your Message*" required class="inputfields"></textarea><br><br>
+				  <input id="namefield" name="namefield" type="text" aria-label="Your Name" title="Your Name" placeholder="Your Name*" required class="inputfields"><br>
+				  <input id="emailfield" name="emailfield" type="email" aria-label="Your E-mail" title="Your E-mail" placeholder="Your E-mail*" required class="inputfields"><br>
+				  <textarea id="messagefield" name="messagefield" aria-label="Type Your Message" title="Type Your Message" placeholder="Type Your Message*" required class="inputfields"></textarea><br><br>
 				  <button type="submit" aria-label="Send" title="Send" id="mybtn">SEND</button>
 				</form>
 				{{ end }}
-            </div>
+            <br><br></div>
             {{ if .Site.Params.contact.phone }}
                 <div class="{{ if .Site.Params.contact.email }} col-lg-4 {{ else }} col-lg-8 {{ end }} col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>

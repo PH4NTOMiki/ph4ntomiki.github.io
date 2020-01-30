@@ -1,0 +1,26 @@
+{
+  "name": "tonilekic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PH4NTOMiki/tonilekic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PH4NTOMiki/tonilekic/issues"
+  },
+  "homepage": "https://github.com/PH4NTOMiki/tonilekic#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.1"
+  }
+}

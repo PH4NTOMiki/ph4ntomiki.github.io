@@ -7,4 +7,4 @@
 {{ $creativescript := resources.Get "/js/creative.js" | minify }}
 <script src="{{ $vendorscript.Permalink | absURL }}"></script>
 {{ if .Site.Params.location }}<script src="//maps.googleapis.com/maps/api/js?key={{ .Site.Params.location.maps_api_key }}&v=3.exp"></script>{{ $hpneogmaps := resources.Get "/js/hpneo.gmaps.js" }}{{ $gmapsinit := resources.Get "/js/gmaps.init.js" }}{{$gmapsscript := slice $hpneogmaps $gmapsinit | resources.Concat "/js/gmaps-hpneo-init.js" | minify }}<script src="{{ $gmapsscript.Permalink | absURL }}"></script>{{ end }}
-<script src="{{ $creativescript.Permalink | absURL }}"></script>
+{{/*<script src="{{ $creativescript.Permalink | absURL }}"></script>*/}}
