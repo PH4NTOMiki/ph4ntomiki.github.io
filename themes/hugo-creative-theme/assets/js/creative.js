@@ -53,19 +53,19 @@
 		var name=$('#namefield').val($.trim($('#namefield').val())).val(),
 		email=$('#emailfield').val($.trim($('#emailfield').val())).val(),
 		message=$('#messagefield').val($.trim($('#messagefield').val())).val(),
-		reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),textReg=new RegExp('[^\s@]+'),rtrn=true;
+		reg=new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$'),textReg=new RegExp('[^\s@]+'),rtrn=1;
 		
-		if(name.replace(/ /g,'') == ''){alert('Name field is empty.');rtrn=false;
-		} else if(!textReg.test(name)){alert('Your Name doesn\'t seem right.');rtrn=false;
-		} else if(name.length<3){alert('Your Name seems too short.');rtrn=false;}
+		if(name.replace(/ /g,'') == ''){alert('Name field is empty.');rtrn=0;
+		} else if(!textReg.test(name)){alert('Your Name doesn\'t seem right.');rtrn=0;
+		} else if(name.length<3){alert('Your Name seems too short.');rtrn=0;}
 		
-		if(email.replace(/ /g,'') == ''){alert('E-mail address field is empty.');rtrn=false;
-		} else if(!reg.test(email)){alert('E-mail address format is invalid.');rtrn=false;}
+		if(email.replace(/ /g,'') == ''){alert('E-mail address field is empty.');rtrn=0;
+		} else if(!reg.test(email)){alert('E-mail address format is invalid.');rtrn=0;}
 		
-		if(message.replace(/ /g,'') == ''){alert('Message field is empty.');rtrn=false;
-		} else if(!textReg.test(message)){alert('Your Message doesn\'t seem right.');rtrn=false;
-		} else if(message.length<10){alert('Your Message is too short.');rtrn=false;}
-		return rtrn;
+		if(message.replace(/ /g,'') == ''){alert('Message field is empty.');rtrn=0;
+		} else if(!textReg.test(message)){alert('Your Message doesn\'t seem right.');rtrn=0;
+		} else if(message.length<10){alert('Your Message is too short.');rtrn=0;}
+		return !!rtrn;
 	});
 
 })(jQuery); // End of use strict
