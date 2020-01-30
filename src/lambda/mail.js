@@ -20,6 +20,6 @@ exports.handler =  async (event, context, callback) => {
         
         //return {statusCode: 200, body: "Message sent"}
     //} catch(e){
-        return {statusCode: 200, body: JSON.stringify([...payload, ...msg])}
+        return {statusCode: 200, body: JSON.stringify([payload, msg])}
     //}
 };
