@@ -7,13 +7,13 @@ exports.handler =  async (event, context, callback) => {
         payload[key]=value;
     });
     var { email, subject } = payload;
-    //sgMail.setApiKey(SENDGRID_API_KEY)
+    sgMail.setApiKey(SENDGRID_API_KEY)
     body = Object.keys(payload).map(k => `${k}: ${payload[k]}`).join("<br><br>");
     msg = {
         to: SENDGRID_TO_EMAIL,
         from: email,
         subject: subject || 'Contact Form Submission',
-        html: body,
+        html: body || 'aa',
     };
     //try{
         b=await sgMail.send(msg)
