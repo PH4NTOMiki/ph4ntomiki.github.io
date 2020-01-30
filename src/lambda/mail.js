@@ -1,6 +1,6 @@
 const sgMail = require('@sendgrid/mail'),
 { SENDGRID_API_KEY, SENDGRID_TO_EMAIL } = process.env
-
+var b;
 exports.handler =  async (event, context, callback) => {
     var payload = {}, body, msg;
     ('?'+event.body).replace(/[?&]+([^=&]+)=([^&]*)/gi, (m,key,value)=>{
@@ -16,10 +16,10 @@ exports.handler =  async (event, context, callback) => {
         html: body,
     };
     //try{
-        //await sgMail.send(msg)
+        b=await sgMail.send(msg)
         
         //return {statusCode: 200, body: "Message sent"}
     //} catch(e){
-        return {statusCode: 200, body: JSON.stringify([payload, msg])}
+        return {statusCode: 200, body: JSON.stringify({payload, msg, b})}
     //}
 };
