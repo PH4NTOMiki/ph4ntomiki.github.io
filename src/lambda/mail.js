@@ -11,7 +11,7 @@ exports.handler =  async (event, context, callback) => {
     body = Object.keys(payload).map(k => `${k}: ${payload[k]}`).join("<br><br>");
     msg = {
         to: SENDGRID_TO_EMAIL,
-        from: email,
+        from: email || 'aa@a.com',
         subject: subject || 'Contact Form Submission',
         html: body || 'aa',
     };
