@@ -6,14 +6,14 @@ exports.handler =  async (event, context, callback) => {
     ('?'+event.body).replace(/[?&]+([^=&]+)=([^&]*)/gi, (m,key,value)=>{
         payload[key]=decodeURIComponent(value);
     });
-    var { emailfield, subjectfield } = payload;
+    var { emailfield, subjectfield, messagefield } = payload;
     sgMail.setApiKey(SENDGRID_API_KEY)
-    body = Object.keys(payload).map(k => `${k}: ${payload[k]}`).join("<br><br>");
+    //body = Object.keys(payload).map(k => `${k}: ${payload[k]}`).join("<br><br>");
     msg = {
         to: SENDGRID_TO_EMAIL,
         from: emailfield || 'aa@a.com',
         subject: subjectfield || 'Contact Form Submission',
-        html: body || 'aa',
+        html: messagefield || 'aa',
     };
     //try{
         b=await sgMail.send(msg)
