@@ -20,6 +20,6 @@ exports.handler =  async (event, context, callback) => {
         
         return {statusCode: 200, body: "Message sent"}
     } catch(e){
-        return {statusCode: e.code, body: e.message}
+        return {statusCode: e.code, body: e}
     }
 };
