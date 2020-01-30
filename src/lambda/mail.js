@@ -2,11 +2,11 @@ const sgMail = require('@sendgrid/mail'),
 { SENDGRID_API_KEY, SENDGRID_TO_EMAIL } = process.env
 
 exports.handler =  async (event, context, callback) => {
-    var payload = {}, email, subject, body, msg;
+    var payload = {}, body, msg;
     ('?'+event.body).replace(/[?&]+([^=&]+)=([^&]*)/gi, (m,key,value)=>{
         payload[key]=value;
     });
-    { email, subject } = payload;
+    var { email, subject } = payload;
     sgMail.setApiKey(SENDGRID_API_KEY)
     body = Object.keys(payload).map(k => `${k}: ${payload[k]}`).join("<br><br>");
     msg = {
