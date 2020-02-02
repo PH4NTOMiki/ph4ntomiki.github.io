@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/PH4NTOMiki/tonilekic#readme",
   "dependencies": {
-    "@sendgrid/mail": "^6.5.1"
+    "@sendgrid/mail": "^6.5.1",
+    "minify": "^5.1.0"
   }
 }

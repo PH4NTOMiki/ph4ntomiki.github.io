@@ -1,0 +1,2 @@
+const fs = require('fs'), path = require('path').join(__dirname,'docs','index.html'), minify = require('minify');
+fs.writeFileSync(path,minify.html(fs.readFileSync(path).toString(),{html:{removeAttributeQuotes: false, removeOptionalTags: false, removeEmptyAttributes: false, removeEmptyElements: false}}));

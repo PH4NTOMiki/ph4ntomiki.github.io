@@ -1,2 +1,3 @@
-hugo --minify
+hugo
+node minify.js
 pause
