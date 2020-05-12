@@ -50,6 +50,7 @@
 		$('#messagefield')[0].setCustomValidity('Please type your message in this field.');
 	}*/
 	$('#form1').submit(function(evnt){
+		evnt.preventDefault();
 		var name=$('#namefield').val($.trim($('#namefield').val())).val(),
 		email=$('#emailfield').val($.trim($('#emailfield').val())).val(),
 		message=$('#messagefield').val($.trim($('#messagefield').val())).val(),
@@ -65,7 +66,20 @@
 		if(message.replace(/ /g,'') == ''){alert('Message field is empty.');rtrn=0;
 		} else if(!textReg.test(message)){alert('Your Message doesn\'t seem right.');rtrn=0;
 		} else if(message.length<10){alert('Your Message is too short.');rtrn=0;}
-		return !!rtrn;
+		if(!rtrn)return;
+		$.ajax({
+            type: "POST",
+            dataType: "json",
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            success: function(response){
+                if(response.status == "success"){
+                    alert("We received your submission, thank you!");
+                }else{
+                    alert("An error occured: " + response.message);
+                }
+            }
+        });
 	});
 
 })(jQuery); // End of use strict
